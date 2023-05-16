@@ -1,0 +1,240 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --red: #ed1717;
+    --black: #192a56;
+    --lightcolor: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 4.4rem;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+.outer-container{
+    margin-top:7rem;
+}
+.container_ad2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 3rem;
+    min-height: calc(100vh - 6rem);
+    backdrop-filter: blur(5px);
+    margin: 20rem;
+    margin-top: 1rem;
+}
+
+.left_ad2 {
+    flex: 1 0 40rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-radius: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-bottom: 3rem;
+}
+
+    .left_ad2 img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .left_ad2 h2 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .left_ad2 p {
+        font-size: 2.6rem;
+        margin-bottom: 1rem;
+        color: var(--lightcolor);
+        font-weight: bold;
+    }
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.pricead1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--red);
+    font-weight: bold;
+}
+
+.star {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-color: yellow;
+    margin-right: 0.5rem;
+}
+
+.right_ad2 {
+    flex: 1 0 40rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+    .right_ad2 .con_ad2 {
+        position: relative;
+        flex: 2;
+        align-content: space-evenly;
+    }
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.size-options_ad2 label,
+.toppings_ad2 label {
+    display: block;
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.size-options_ad2 input[type="radio"],
+.toppings_ad2 input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.size-container {
+    margin-right: 6rem;
+}
+
+select.ad2,
+button.ad2 {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+button.ad2 {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+    button.ad2:hover {
+        background-color: #45a049;
+    }
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    .container_ad2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left_ad2,
+    .right_ad2 {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+body {
+    background-image: url('../menuimages/iimg8.jpg');
+    background-size: cover;
+    background-position: center;
+}
+/* ... Previous CSS Code ... */
+
+.con_ad2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+    .con_ad2 h2 {
+        font-size: 2.2rem;
+        margin-right: 1rem;
+    }
+
+.size-options_ad2,
+.toppings_ad2 {
+    display: block;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.toppings-container {
+    padding-right: 0rem;
+    flex-wrap: nowrap;
+}
+
+.size-options_ad2 label,
+.toppings_ad2 label {
+    flex: 0 0 33.33%;
+    font-size: 1.5rem;
+    margin-right: 5rem;
+    white-space: nowrap; /* Add this line to prevent wrapping within each label */
+}
+
+.ad2 {
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .con_ad2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+.error-message {
+    color: #ff0000; /* Red color */
+    font-size: 1.6rem;
+    margin-top: 10px;
+}

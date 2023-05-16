@@ -1,0 +1,130 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+}
+
+.ufd {
+    background: rgba(247, 53, 53, 0.8);
+    width: 640px;
+    margin: 50px auto;
+    max-width: 97%;
+    border-radius: 4px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 55px 30px;
+    margin-top: 8rem;
+}
+
+form .title_uf h2 {
+    letter-spacing: 6px;
+    border-bottom: 1px solid white;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 32px;
+    text-align: center;
+    width: 100%;
+}
+
+form .half_uf {
+    display: flex;
+    justify-content: space-between;
+}
+
+    form .half_uf .item_uf {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        width: 48%;
+    }
+
+form label {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    margin-bottom: 16px;
+}
+
+form .half_uf .item_uf input {
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: 0;
+    padding: 16px;
+    width: 100%;
+    height: 44px;
+    background: transparent;
+    font-size: 17px;
+}
+
+form .full_uf {
+    margin-bottom: 24px;
+}
+
+    form .full_uf textarea {
+        background: transparent;
+        border-radius: 4px;
+        border: 1px solid white;
+        outline: 0;
+        padding: 12px 16px;
+        width: 100%;
+        height: 200px;
+        font-size: 17px;
+    }
+
+form .action_uf {
+    margin-bottom: 32px;
+}
+
+    form .action_uf input {
+        background: transparent;
+        border-radius: 4px;
+        border: 1px solid white;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        height: 44px;
+        letter-spacing: 3px;
+        outline: 0;
+        padding: 0 20px 0 22px;
+        margin-right: 10px;
+    }
+
+        form .action_uf input[type="submit"] {
+            background: white;
+            color: black;
+        }
+
+form .icons_uf a {
+    border: 1px solid white;
+    border-radius: 50%;
+    line-height: 36px;
+    text-align: center;
+    font-weight: 600;
+    width: 38px;
+    margin-right: 10px;
+}
+
+    form .half_uf .item_uf input:focus, form .full_uf textarea:focus, form .action_uf input[type="reset"]:hover, form .icons_uf a:hover {
+        background: rgba(255,255,255,0.075);
+    }
+
+@media (max-width: 480px) {
+    form .half_uf {
+        flex-direction: column;
+    }
+
+        form .half_uf .item_uf {
+            width: 100%;
+        }
+
+    form .action_uf {
+        display: flex;
+        flex-direction: column;
+    }
+
+        form .action_uf input {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+}

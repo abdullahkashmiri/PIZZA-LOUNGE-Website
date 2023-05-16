@@ -1,0 +1,244 @@
+﻿
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --red: #ed1717;
+    --black: #192a56;
+    --lightcolor: #666;
+    --box-Shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: url('../menuimages/slider/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 120vh;
+    overflow: scroll;
+}
+
+.parent_container {
+    margin-top: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    margin-bottom: 20rem;
+    background-image: url('../menuimages/slider/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 20rem; /* Adjust this value as needed */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+    input[type="submit"]:hover {
+        background-color: #cc0000; /* Darker shade of red on hover */
+    }
+
+    input[type="submit"]:focus {
+        outline: none;
+    }
+
+.selection-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.selection-labels {
+    display: flex;
+    flex-direction: column;
+}
+
+    .selection-labels label {
+        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+
+.selection-inputs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .selection-inputs input[type="radio"],
+    .selection-inputs input[type="checkbox"] {
+        display: none;
+    }
+
+    .selection-inputs label {
+        display: block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        font-size: 1.8rem;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .selection-inputs label:hover {
+            background-color: #e0e0e0;
+        }
+
+    .selection-inputs input[type="radio"]:checked + label,
+    .selection-inputs input[type="checkbox"]:checked + label {
+        background-color: #ff0000; /* Red color */
+        color: #fff;
+    }
+
+    .selection-inputs input[type="radio"]:focus + label,
+    .selection-inputs input[type="checkbox"]:focus + label {
+        outline: none;
+    }
+
+    .selection-inputs input[type="radio"]:disabled + label,
+    .selection-inputs input[type="checkbox"]:disabled + label {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .selection-inputs input[type="radio"]:disabled:checked + label,
+    .selection-inputs input[type="checkbox"]:disabled:checked + label {
+        background-color: #aaa;
+    }
+
+.error-message {
+    color: #ff0000; /* Red color */
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: #00ff00; /* Green color */
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.container_1 {
+    /* Existing styles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.place-order-button {
+    width: 70%;
+    padding: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .place-order-button:hover {
+        background-color: #cc0000;
+    }
+
+    .place-order-button:focus {
+        outline: none;
+    }
+
+.inv_container {
+    display: none;
+}
+
+/* Show the inv_container when its parent panel is visible */
+.parent_container .inv_container {
+    display: block;
+}
+
+.error-message {
+    color: #ff0000; /* Red color */
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.amount-container {
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+}
+
+.lblAmount {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}

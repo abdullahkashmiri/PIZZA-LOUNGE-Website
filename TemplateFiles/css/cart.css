@@ -1,0 +1,106 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+
+:root {
+    --red: #ed1717;
+    --black: #192a56;
+    --lightcolor: #666;
+    --box-Shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+.btn-crt {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .1rem 1rem;
+}
+
+    .btn-crt:hover {
+        background: var(--red);
+    }
+
+
+section {
+    padding: 2rem 13%;
+    padding-top: 8rem;
+}
+
+    section:nth-child(even) {
+        background: #eee;
+    }
+
+.sub-headingad {
+    text-align: center;
+    color: var(--red);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.headingad {
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+
+.cart .box-container-crt {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem,1fr));
+    gap: 1.5rem;
+}
+
+
+    .cart .box-container-crt .box-crt {
+        display: flex;
+        width: auto;
+        margin-top: 1.5rem;
+        height: auto;
+        box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.2);
+        border: .1rem solid rgba(0,0,0,.2);
+        background-color: #fff;
+        border-radius: 1.5rem;
+        justify-content: space-between;
+        align-content: center;
+        padding: 1.6rem;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+        .cart .box-container-crt .box-crt .image-crt {
+            height: 15rem;
+            border-radius: 5%;
+            margin: 0rem;
+        }
+
+        .cart .box-container-crt .box-crt .text-crt {
+            color: var(--black);
+            font-size: 1.8rem;
+            text-align: center;
+            padding-left: .2rem;
+            font-weight: bold;
+        }
+
+        .cart .box-container-crt .box-crt .name {
+            color: var(--red);
+            font-weight: bolder;
+            margin-right: 0rem;
+            padding-bottom: 0rem;
+            display: block;
+            font-size: 2.5rem;
+        }
+
+/* Media Queries */
+@media (max-width: 991px) {
+}
+
+@media (max-width: 768px) {
+}

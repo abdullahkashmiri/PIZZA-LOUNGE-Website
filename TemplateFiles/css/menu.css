@@ -1,0 +1,204 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+
+:root {
+    --red: #ed1717;
+    --black: #192a56;
+    --lightcolor: #666;
+    --box-Shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+.btnad {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+    .btnad:hover {
+        background: var(--red);
+        letter-spacing: .1rem;
+    }
+
+
+section {
+    padding: 2rem 8%;
+    padding-top: 6rem;
+}
+
+    section:nth-child(even) {
+        background: #eee;
+    }
+
+.sub-headingad {
+    text-align: center;
+    color: var(--red);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.headingad {
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+
+.menuad .box-containerad {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem,1fr));
+    gap: 1.5rem;
+}
+
+
+    .menuad .box-containerad .boxad {
+        padding: 2.5rem;
+        background: #fff;
+        border-radius: .5rem;
+        border: .1rem solid rgba(0,0,0,.2);
+        box-shadow: var(--box-Shadow);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+        .menuad .box-containerad .boxad .fa-heart,
+        .menuad .box-containerad .boxad .fa-eye {
+            position: absolute;
+            top: 1.5rem;
+            background: #eee;
+            border-radius: 50%;
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            font-size: 2rem;
+            color: var(--black);
+        }
+
+            .menuad .box-containerad .boxad .fa-eye:hover,
+            .menuad .box-containerad .boxad .fa-heart:hover {
+                background: var(--red);
+                color: #fff;
+            }
+
+        .menuad .box-containerad .boxad .fa-heart {
+            right: -15rem;
+        }
+
+        .menuad .box-containerad .boxad .fa-eye {
+            left: -15rem;
+        }
+
+
+        .menuad .box-containerad .boxad:hover .fa-heart {
+            right: 1.5rem;
+        }
+
+        .menuad .box-containerad .boxad:hover .fa-eye {
+            left: 1.5rem;
+        }
+
+
+        .menuad .box-containerad .boxad img {
+            height: 17rem;
+            margin: 1rem 0; 
+        }
+        .menuad .box-containerad .boxad img {
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+        }
+
+        .menuad .box-containerad .boxad h3 {
+            color: var(--black);
+            font-size: 2.5rem;
+        }
+
+        .menuad .box-containerad .boxad .starsad {
+            padding: 1rem 0;
+        }
+
+            .menuad .box-containerad .boxad .starsad i {
+                font-size: 1.7rem;
+                color: var(--red);
+            }
+
+        .menuad .box-containerad .boxad span {
+            color: var(--red);
+            font-weight: bolder;
+            margin-right: 1rem;
+            font-size: 2.5rem;
+        }
+
+/* HOME SLIDER STARTS */
+
+.homead {
+    position: relative;
+    z-index: 0;
+}
+
+    .homead .homesliderad .slidead {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+    }
+
+        .homead .homesliderad .slidead .contentad {
+            flex: 1 1 45rem;
+        }
+
+        .homead .homesliderad .slidead .imagead {
+            flex: 1 1 45rem;
+        }
+
+            .homead .homesliderad .slidead .imagead img {
+                height: auto;
+                width: 100%;
+            }
+
+        .homead .homesliderad .slidead .contentad span {
+            color: var(--red);
+            font-size: 2.5rem;
+        }
+
+        .homead .homesliderad .slidead .contentad h3 {
+            color: var(--black);
+            font-size: 7rem;
+        }
+
+        .homead .homesliderad .slidead .contentad p {
+            color: var(--lightcolor);
+            font-size: 2rem;
+            padding: .5rem 0;
+            line-height: 1.5;
+        }
+
+.swiper-pagination-bullet-active {
+    background: var(--red);
+}
+
+/* HOME SLIDER ENDS */
+/* Media Queries */
+@media (max-width: 991px) {
+    .menuad .box-containerad .boxad img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .homead .homesliderad .slidead .contentad h3 {
+        font-size: 5rem;
+    }
+}

@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="PIZZA_LOUNGE.User.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    ead runat="server">
+   <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Lounge</title>
+    <link rel="stylesheet" href="../TemplateFiles/css/navbar.css"><!--linked css file of navbar-->
+    <link rel="stylesheet" href="../TemplateFiles/css/menu.css"><!--linked css file of mo-->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+ 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+            <style>
+    header .navbarad .active,
+    header .navbarad .active:hover {
+        color: #fff;
+        background: #ed1717;
+    }
+</style>
+           <!--Header Starts-->
+    <!--//---------------------------------------------//-->
+    <header>
+        <a href="#" class="logoad"><i class="fas-fa-untenstils"></i>PIZZA LOUNGE</a>
+        <style>
+
+            header .navbarad .a.active,
+            header .navbarad .a:hover{
+                color: #fff;
+                background: #ed1717;/*var(--red);*/
+            }
+
+            header .navbarad a{
+                font-size: 1.7rem;
+                border-radius: .5rem;
+                padding: .5rem 1.5rem;
+                color: #666; /*var(--lightcolor);*/
+            }
+        </style>
+        <!--//Navigation Bar-->
+        <nav class="navbarad">
+            <asp:LinkButton ID="home" Visible="true" runat="server" Cssclass="a active" OnClick="home_Click" >HOME</asp:LinkButton>
+            <asp:LinkButton ID="menu" Visible="true" runat="server" Cssclass="a" OnClick="menu_Click" >MENU</asp:LinkButton>
+            <asp:LinkButton ID="order" Visible="true" runat="server" Cssclass="a" OnClick="order_Click" >MAKE A PIZZA</asp:LinkButton>
+            <asp:LinkButton ID="reserve" Visible="true" runat="server" Cssclass="a" OnClick="reserve_Click" >RESERVATION</asp:LinkButton>
+            <asp:LinkButton ID="comp" Visible="true" runat="server" Cssclass="a" OnClick="comp_Click" >COMPLAINT</asp:LinkButton>
+            <asp:LinkButton ID="job" Visible="true" runat="server" Cssclass="a" OnClick="job_Click" >JOBS</asp:LinkButton>
+            <asp:LinkButton ID="Login" Visible="true" runat="server" Cssclass="a" OnClick="Login_Click" >LOGIN</asp:LinkButton>
+            <asp:LinkButton ID="Logout" Visible="true" runat="server" Cssclass="a active" OnClick="Logout_Click" >LOGOUT</asp:LinkButton>
+        </nav>
+
+        <div class="iconsad">
+            <i class="fas fa-bars" id="menu-barsad"></i>
+            <a href="Rating.aspx" class="fas fa-heart"></a>
+            <a href="Cart.aspx" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+    <!-- Header section-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+             <!--JS file Linkwd-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../TemplateFiles/js/script.js"></script>
+    </form>
+</body>
+</html>

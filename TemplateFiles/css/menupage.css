@@ -1,0 +1,145 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --red: #ed1717;
+    --black: #192a56;
+    --lightcolor: #666;
+    --box-Shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+.pmenuad .box-containerad .boxad .imagead .fa-heart {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    background: #fff;
+    border-radius: 50%;
+    color: var(--black);
+}
+
+    .pmenuad .box-containerad .boxad .imagead .fa-heart:hover {
+        background-color: var(--red);
+        color: #fff;
+    }
+
+.pmenuad .box-containerad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+    .pmenuad .box-containerad .boxad {
+        flex-basis: calc(25% - 1.5rem);
+        width: 100%;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .2);
+        border-radius: .5rem;
+        box-shadow: var(--box-Shadow);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+        .pmenuad .box-containerad .boxad .imagead {
+            height: 25rem;
+            width: 100%;
+            padding: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .pmenuad .box-containerad .boxad .imagead img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: .5rem;
+            }
+
+        .pmenuad .box-containerad .boxad .contentad {
+            padding: 2rem;
+            padding-top: 0;
+        }
+
+            .pmenuad .box-containerad .boxad .contentad .starsad {
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+            }
+
+                .pmenuad .box-containerad .boxad .contentad .starsad i {
+                    font-size: 1.7rem;
+                    color: var(--red);
+                }
+
+            .pmenuad .box-containerad .boxad .contentad h3 {
+                font-size: 2.5rem;
+                color: var(--black);
+            }
+
+
+            .pmenuad .box-containerad .boxad .contentad p {
+                font-size: 1.6rem;
+                color: var(--lightcolor);
+                padding: .5rem 0;
+                line-height: 1.5;
+            }
+
+
+
+            .pmenuad .box-containerad .boxad .contentad .pricead {
+                color: var(--red);
+                margin-left: 1rem;
+                font-size: 2.5rem;
+            }
+
+.rowad1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .pmenuad .box-containerad .boxad {
+        flex-basis: calc(33.33% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .pmenuad .box-containerad .boxad {
+        flex-basis: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .pmenuad .box-containerad .boxad {
+        flex-basis: 100%;
+    }
+}
