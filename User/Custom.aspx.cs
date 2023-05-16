@@ -236,53 +236,56 @@ namespace PIZZA_LOUNGE.User
                 Response.Redirect("./Login.aspx");
             }
 
-            else //user logedin
-            {
-                try
-                {
-                    if (connec.State == ConnectionState.Closed)
-                    {
-                        connec.Open();
-                    }
+            //else //user logedin
+            //{
+            //    try
+            //    {
+            //        if (connec.State == ConnectionState.Closed)
+            //        {
+            //            connec.Open();
+            //        }
 
-                    SqlCommand cmd = new SqlCommand("Select ProductId From Products Where Name = '" + Session["CartName"] + "'", connec);
-                    SqlDataReader sdr = cmd.ExecuteReader();
-                    sdr.Read();
-                    int prod_id = Convert.ToInt32(sdr.GetValue(0));
+            //        SqlCommand cmd = new SqlCommand("Select ProductId From Products Where Name = '" + Session["CartName"] + "'", connec);
+            //        SqlDataReader sdr = cmd.ExecuteReader();
+            //        sdr.Read();
+            //        int prod_id = Convert.ToInt32(sdr.GetValue(0));
 
-                    if (!AlredyAdded(prod_id)) //else inc quantity by one
-                    {
-                        //add new cart item
-                        cmd.Dispose();
+            //        if (!AlredyAdded(prod_id)) //else inc quantity by one
+            //        {
+            //            //add new cart item
+            //            cmd.Dispose();
 
-                        cmd = new SqlCommand("cart_manage", connec)
-                        {
-                            CommandType = System.Data.CommandType.StoredProcedure
-                        };
-                        cmd.Parameters.AddWithValue("@Action", "INSERT");
-                        cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
-                        cmd.Parameters.AddWithValue("@Prod_id", prod_id);
-                        cmd.Parameters.AddWithValue("@Quantity", 1);
-                        cmd.ExecuteNonQuery();
-                    }
+            //            cmd = new SqlCommand("cart_manage", connec)
+            //            {
+            //                CommandType = System.Data.CommandType.StoredProcedure
+            //            };
+            //            cmd.Parameters.AddWithValue("@Action", "INSERT");
+            //            cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
+            //            cmd.Parameters.AddWithValue("@Prod_id", prod_id);
+            //            cmd.Parameters.AddWithValue("@Quantity", 1);
+            //            cmd.ExecuteNonQuery();
+            //        }
 
-                    connec.Close();
-                    Response.Redirect("Cart.aspx");
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("" + ex.Message + "');</script>");
-                }
+            //        connec.Close();
+            //        Response.Redirect("Cart.aspx");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Response.Write("" + ex.Message + "');</script>");
+            //    }
 
-            }
+            //}
 
             // Access the logged-in user ID from the session
-            int loggedinUserId = (int)Session["user_id"];
+            
             int s = (int)Session["CustomOrderNo"];
             Session["CustomOrderNo"] = s + 1;
-            int userId = loggedinUserId; // User ID
+
+            int userId = Convert.ToInt32(Session["user_id"]);
+
+
             int quantity = 1;
-            int productId = GetProductIdFromCustomOrderTable(); // Replace this with the actual logic to get the product ID from the custom_order table
+            int productId = GetProductIdFromCustomOrderTable(); 
             int price = (int)Session["PizzaPrice"];
             int orderNo = (int)Session["CustomOrderNo"];
             int size = (int)Session["PizzaSize"];
@@ -369,37 +372,37 @@ namespace PIZZA_LOUNGE.User
             // Set the text of the label to display the price
             lblAmount.Text = "Total Amount: RS " + Session["PizzaPrice"].ToString();
         }
-        bool AlredyAdded(int prod_id)
-        {
-            SqlCommand cmd = new SqlCommand("cart_manage", connec)
-            {
-                CommandType = System.Data.CommandType.StoredProcedure
-            };
+        //bool AlredyAdded(int prod_id)
+        //{
+        //    SqlCommand cmd = new SqlCommand("cart_manage", connec)
+        //    {
+        //        CommandType = System.Data.CommandType.StoredProcedure
+        //    };
 
-            cmd.Parameters.AddWithValue("@Action", "GETBYID");
-            cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
-            cmd.Parameters.AddWithValue("@Prod_id", prod_id);
+        //    cmd.Parameters.AddWithValue("@Action", "GETBYID");
+        //    cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
+        //    cmd.Parameters.AddWithValue("@Prod_id", prod_id);
 
-            SqlDataReader dr = cmd.ExecuteReader();
+        //    SqlDataReader dr = cmd.ExecuteReader();
 
-            if (!dr.HasRows)
-            {
-                return false;
-            }
+        //    if (!dr.HasRows)
+        //    {
+        //        return false;
+        //    }
 
-            cmd.Dispose();
+        //    cmd.Dispose();
 
-            cmd = new SqlCommand("cart_manage", connec)
-            {
-                CommandType = System.Data.CommandType.StoredProcedure
-            };
-            cmd.Parameters.AddWithValue("@Action", "INC");
-            cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
-            cmd.Parameters.AddWithValue("@Prod_id", prod_id);
+        //    cmd = new SqlCommand("cart_manage", connec)
+        //    {
+        //        CommandType = System.Data.CommandType.StoredProcedure
+        //    };
+        //    cmd.Parameters.AddWithValue("@Action", "INC");
+        //    cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
+        //    cmd.Parameters.AddWithValue("@Prod_id", prod_id);
 
-            cmd.ExecuteNonQuery();
+        //    cmd.ExecuteNonQuery();
 
-            return true;
-        }
+        //    return true;
+        //}
     }
 }

@@ -102,7 +102,7 @@ namespace PIZZA_LOUNGE.User
             string query = "SELECT CASE When c.C_Order = 1  Then -1 Else c.ProductId END as ProductId, ";
             query += "CASE WHEN c.C_Order = 1 THEN 'Custom Order' ELSE p.Name END AS Name, ";
             query += "c.Price, ";
-            query += "CASE WHEN c.C_Order = 1 THEN '..//TemplateFiles//menuimages//iimg4.jpg' ELSE p.ImageUrl END AS ImageUrl, ";
+            query += "CASE WHEN c.C_Order = 1 THEN '..//TemplateFiles//menuimages//achari.jpg' ELSE p.ImageUrl END AS ImageUrl, ";
             query += "c.Quantity, ";
             query += "Case When Size = 1 Then 'Size: Small' ";
             query += "     When Size = 2 Then 'Size: Medium' ";
@@ -282,6 +282,7 @@ namespace PIZZA_LOUNGE.User
                 Refresh_Screen();
             }
             connec.Close();
+            Response.Redirect("./Tracking.aspx");
         }
 
         protected void clr_Button_Click(object sender, EventArgs e)
@@ -302,8 +303,7 @@ namespace PIZZA_LOUNGE.User
             cmd.ExecuteNonQuery();
 
             connec.Close();
-            //Refresh_Screen();
-            Response.Redirect("Tracking.aspx");
+            Refresh_Screen();
         }
     }
 }

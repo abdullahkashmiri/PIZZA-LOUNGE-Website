@@ -20,10 +20,7 @@ namespace PIZZA_LOUNGE.User
         }
         protected void SendButton(object sender, EventArgs e)
         {
-            if (Session["status"] == null) //user not logedin
-            {
-                Response.Redirect("./Login.aspx");
-            }
+           
             SqlConnection conn = new SqlConnection(complaintcon);
             if (conn.State == ConnectionState.Closed)
             {

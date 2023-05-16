@@ -26,10 +26,7 @@ namespace PIZZA_LOUNGE.User
 
         protected void SendButton1(object sender, EventArgs e)
         {
-            if (Session["status"] == null) //user not logedin
-            {
-                Response.Redirect("./Login.aspx");
-            }
+            
             // Get the file name and extension
             string fileName = Path.GetFileName(cvUF.PostedFile.FileName);
             string fileExtension = Path.GetExtension(fileName);

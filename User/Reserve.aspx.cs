@@ -31,7 +31,7 @@ namespace PIZZA_LOUNGE.User
             string name = fullNameTextBox.Text;
             string phone = phoneNumberTextBox.Text;
             int persons = Convert.ToInt32(personsTextBox.Text);
-            int userId = Convert.ToInt32(Session["loggedinUserId"]);
+            int userId = Convert.ToInt32(Session["user_id"]);
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
