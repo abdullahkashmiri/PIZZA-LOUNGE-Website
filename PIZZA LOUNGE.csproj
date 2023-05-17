@@ -93,6 +93,7 @@
     <Content Include="TemplateFiles\menuimages\banner\img2.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img5.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img6.jpg" />
+    <Content Include="TemplateFiles\menuimages\banner\oimg1.jpg" />
     <Content Include="TemplateFiles\menuimages\bbq.jpg" />
     <Content Include="TemplateFiles\menuimages\chapli.jpg" />
     <Content Include="TemplateFiles\menuimages\cheesy.jpg" />
@@ -101,6 +102,7 @@
     <Content Include="TemplateFiles\menuimages\malai.jpg" />
     <Content Include="TemplateFiles\menuimages\mexican.jpg" />
     <Content Include="TemplateFiles\menuimages\mughlayi.jpg" />
+    <Content Include="TemplateFiles\menuimages\oimg1.jpg" />
     <Content Include="TemplateFiles\menuimages\pepperoni.jpg" />
     <Content Include="TemplateFiles\menuimages\royal.jpg" />
     <Content Include="TemplateFiles\menuimages\seekh.jpg" />

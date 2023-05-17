@@ -51,13 +51,13 @@ namespace PIZZA_LOUNGE.Admin
         protected global::System.Web.UI.WebControls.LinkButton customize;
 
         /// <summary>
-        /// order control.
+        /// manageorder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton order;
+        protected global::System.Web.UI.WebControls.LinkButton manageorder;
 
         /// <summary>
         /// reserve control.

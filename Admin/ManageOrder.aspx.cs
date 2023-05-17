@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿
+using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
+using System.Web.UI.WebControls;
 
 namespace PIZZA_LOUNGE.Admin
 {
@@ -29,55 +26,53 @@ namespace PIZZA_LOUNGE.Admin
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
+                    if (connection.State == ConnectionState.Closed)
                     {
-                        rptOrders.DataSource = reader;
-                        rptOrders.DataBind();
+                        connection.Open();
                     }
 
-                    reader.Close();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        rptOrders.DataSource = dt;
+                        rptOrders.DataBind();
+                    }
                 }
             }
         }
 
-
-        protected void AcceptButton_Click(object sender, EventArgs e)
+        protected void rptOrders_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            int orderId = Convert.ToInt32((sender as Button).CommandArgument);
-            UpdateOrderStatus(orderId, 1);
-            BindOrderData(); // Refresh the order data
-        }
+            if (e.CommandName == "Approve" || e.CommandName == "Decline")
+            {
+                int orderId = Convert.ToInt32(e.CommandArgument);
+                int status = e.CommandName == "Approve" ? 1 : 0; // Set the status based on the command name
 
-        protected void DeclineButton_Click(object sender, EventArgs e)
-        {
-            int orderId = Convert.ToInt32((sender as Button).CommandArgument);
-            UpdateOrderStatus(orderId, 0);
-            BindOrderData(); // Refresh the order data
+                UpdateOrderStatus(orderId, status);
+                BindOrderData(); // Refresh the order data
+            }
         }
 
         private void UpdateOrderStatus(int orderId, int status)
         {
-            // Update the status in the database
-            string connectionString1 = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             string updateQuery = "UPDATE Orders SET Status = @Status WHERE OrderNo = @OrderNo";
 
-            using (SqlConnection connection1 = new SqlConnection(connectionString1))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand(updateQuery, connection1))
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Status", status);
                     command.Parameters.AddWithValue("@OrderNo", orderId);
-                    if (connection1.State == ConnectionState.Closed)
+                    if (connection.State == ConnectionState.Closed)
                     {
-                        connection1.Open();
+                        connection.Open();
                     }
                     command.ExecuteNonQuery();
                 }
             }
         }
-
     }
 }

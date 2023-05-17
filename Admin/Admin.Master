@@ -51,7 +51,7 @@
         <nav class="navbarad">
             <asp:LinkButton ID="products" Visible="true" runat="server" Cssclass="a active" OnClick="products_Click" >Products</asp:LinkButton>
             <asp:LinkButton ID="customize" Visible="true" runat="server" Cssclass="a" OnClick="customize_Click" >Customize Products</asp:LinkButton>
-            <asp:LinkButton ID="order" Visible="true" runat="server" Cssclass="a" OnClick="order_Click" >MAKE A PIZZA</asp:LinkButton>
+            <asp:LinkButton ID="manageorder" Visible="true" runat="server" Cssclass="a" OnClick="manageorder_Click" >Manage Orders</asp:LinkButton>
             <asp:LinkButton ID="reserve" Visible="true" runat="server" Cssclass="a" OnClick="reserve_Click" >RESERVATION</asp:LinkButton>
             <asp:LinkButton ID="comp" Visible="true" runat="server" Cssclass="a" OnClick="comp_Click" >COMPLAINT</asp:LinkButton>
             <asp:LinkButton ID="job" Visible="true" runat="server" Cssclass="a" OnClick="job_Click" >JOBS</asp:LinkButton>

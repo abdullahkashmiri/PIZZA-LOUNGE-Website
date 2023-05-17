@@ -21,37 +21,46 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
+    overflow: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
 }
-
 body {
-    background-image: url('../TemplateFiles/menuimages/banner/oimg1.jpg');
+    background-image: url('../menuimages/banner/oimg1.jpg');
     background-size: cover;
     font-size: 1.6rem;
+    overflow-y: auto; /* Add "overflow-y: auto" to enable vertical scrolling */
 }
-
 .container {
-    position: absolute;
-    top: 50%;
+    position: fixed; /* Change from "absolute" to "fixed" */
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 1rem;
-    width: 50rem;
+    width: 70rem;
     max-width: 90%;
     box-shadow: var(--box-Shadow);
+    margin-top: 5.5rem; /* Add margin-top to create space below the navbar */
+    overflow-y: scroll; /* Change from "auto" to "scroll" */
+    max-height: 85vh; /* Add a maximum height to limit the container's height */
+    background-color:aliceblue;
 }
-
+ 
 .heading {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--black);
+    color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    background-color: var(--red);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .subheading {
@@ -60,17 +69,25 @@ body {
     margin-bottom: 2.5rem;
     color: var(--black);
     text-align: center;
+    background-color: #808080;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .order-container {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    padding:2rem;
+    border-radius:2rem;
 }
 
 .order-image {
-    width: 8rem;
-    height: 8rem;
+    width: 100%; /* Change from "8rem" to "100%" to cover the entire container width */
+    height: 100%; /* Change from "8rem" to "100%" to cover the entire container height */
     object-fit: cover;
     margin-right: 2rem;
     border-radius: 0.8rem;
