@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin\Customize.aspx" />
     <Content Include="Admin\ManageOrder.aspx" />
+    <Content Include="Admin\ManageReserve.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Global.asax" />
     <Content Include="TemplateFiles\css\cart.css" />
@@ -77,6 +78,7 @@
     <Content Include="TemplateFiles\css\customize.css" />
     <Content Include="TemplateFiles\css\login-style.css" />
     <Content Include="TemplateFiles\css\manageorder.css" />
+    <Content Include="TemplateFiles\css\managereserve.css" />
     <Content Include="TemplateFiles\css\menu.css" />
     <Content Include="TemplateFiles\css\menupage.css" />
     <Content Include="TemplateFiles\css\navbar.css" />
@@ -88,12 +90,15 @@
     <Content Include="TemplateFiles\js\script.js" />
     <Content Include="TemplateFiles\menuimages\achari.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\cimg.png" />
+    <Content Include="TemplateFiles\menuimages\banner\cimg3.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img1.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img111.png" />
     <Content Include="TemplateFiles\menuimages\banner\img2.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img5.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img6.jpg" />
+    <Content Include="TemplateFiles\menuimages\banner\jimg1.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\oimg1.jpg" />
+    <Content Include="TemplateFiles\menuimages\banner\rimg1.jpg" />
     <Content Include="TemplateFiles\menuimages\bbq.jpg" />
     <Content Include="TemplateFiles\menuimages\chapli.jpg" />
     <Content Include="TemplateFiles\menuimages\cheesy.jpg" />
@@ -149,6 +154,13 @@
     </Compile>
     <Compile Include="Admin\ManageOrder.aspx.designer.cs">
       <DependentUpon>ManageOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageReserve.aspx.cs">
+      <DependentUpon>ManageReserve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageReserve.aspx.designer.cs">
+      <DependentUpon>ManageReserve.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>

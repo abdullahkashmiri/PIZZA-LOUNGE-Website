@@ -111,20 +111,7 @@ namespace PIZZA_LOUNGE.User
             query += "FROM Carts c ";
             query += "INNER JOIN dbo.Products p ON (c.ProductId = p.ProductId) ";
             query += "WHERE c.UserId = @UserId";
-            //string query = "SELECT CASE WHEN c.C_Order = 1 THEN -1 ELSE c.ProductId END as ProductId, ";
-            //query += "CASE WHEN c.C_Order = 1 THEN 'Custom Order' ELSE p.Name END AS Name, ";
-            //query += "c.Price, ";
-            //query += "CASE WHEN c.C_Order = 1 THEN '..//TemplateFiles//menuimages//iimg4.jpg' ELSE p.ImageUrl END AS ImageUrl, ";
-            //query += "c.Quantity, ";
-            //query += "CASE WHEN Size = 1 THEN 'Size: Small' ";
-            //query += "     WHEN Size = 2 THEN 'Size: Medium' ";
-            //query += "     WHEN Size = 3 THEN 'Size: Large' ";
-            //query += "END as Size ";
-            //query += "FROM Carts c ";
-            //query += "INNER JOIN dbo.Products p ON (c.ProductId = p.ProductId) ";
-            //query += "WHERE c.UserId = @UserId AND c.CartId = (SELECT MAX(CartId) FROM Carts WHERE UserId = @UserId)";
-
-
+          
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -281,6 +268,15 @@ namespace PIZZA_LOUNGE.User
 
                 Refresh_Screen();
             }
+            // Add the command to clear the cart data
+            cmd = new SqlCommand("cart_manage", connec)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@Action", "CLEAR");
+            cmd.Parameters.AddWithValue("@User_id", Convert.ToInt32(Session["user_id"]));
+
+            cmd.ExecuteNonQuery();
             connec.Close();
             Response.Redirect("./Tracking.aspx");
         }

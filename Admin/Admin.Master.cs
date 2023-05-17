@@ -46,7 +46,7 @@ namespace PIZZA_LOUNGE.Admin
             products.CssClass = "a";
             customize.CssClass = "a";
             manageorder.CssClass = "a";
-            reserve.CssClass = "a";
+            managereserve.CssClass = "a";
             comp.CssClass = "a";
             job.CssClass = "a";
             Login.CssClass = "a";
@@ -64,8 +64,8 @@ namespace PIZZA_LOUNGE.Admin
                 case "ManageOrder.aspx":
                     manageorder.CssClass = "a active";
                     break;
-                case "Reserve.aspx":
-                    reserve.CssClass = "a active";
+                case "ManageReserve.aspx":
+                    managereserve.CssClass = "a active";
                     break;
                 case "Complaint.aspx":
                     comp.CssClass = "a active";
@@ -94,9 +94,9 @@ namespace PIZZA_LOUNGE.Admin
             Response.Redirect("./ManageOrder.aspx");
         }
 
-        protected void reserve_Click(object sender, EventArgs e)
+        protected void managereserve_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../User/Reserve.aspx");
+            Response.Redirect("./ManageReserve.aspx");
 
         }
 
