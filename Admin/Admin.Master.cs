@@ -81,45 +81,46 @@ namespace PIZZA_LOUNGE.Admin
 
         protected void products_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Products.aspx");
+            Response.Redirect("../User/Products.aspx");
         }
 
         protected void menu_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Menu.aspx");
+            Response.Redirect("../User/Menu.aspx");
         }
 
         protected void order_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Custom.aspx");
+            Response.Redirect("../User/Custom.aspx");
         }
 
         protected void reserve_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Reserve.aspx");
+            Response.Redirect("../User/Reserve.aspx");
 
         }
 
         protected void comp_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Complaint.aspx");
+            Response.Redirect("../User/Complaint.aspx");
         }
         protected void job_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Job.aspx");
+            Response.Redirect("../User/Job.aspx");
         }
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Login.aspx");
+            Response.Redirect("../User/Login.aspx");
         }
         protected void Logout_Click(object sender, EventArgs e)
         {
+            Session["ProductName"] = null;
             Session["username"] = null;
             Session["user_id"] = null;
             Session["status"] = null;
             Session["bit"] = 2;
-            Response.Redirect("./Default.aspx");
+            Response.Redirect("../User/Default.aspx");
         }
     }
 }

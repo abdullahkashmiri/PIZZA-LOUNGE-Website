@@ -24,15 +24,6 @@ namespace PIZZA_LOUNGE.Admin
         protected global::System.Web.UI.WebControls.Repeater RepeaterProducts;
 
         /// <summary>
-        /// ConfirmationPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ConfirmationPanel;
-
-        /// <summary>
         /// YesButton control.
         /// </summary>
         /// <remarks>

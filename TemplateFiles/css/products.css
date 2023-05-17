@@ -175,21 +175,23 @@ html {
 }
 
 .btn-confirmation {
-    margin-right: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: #45a049;
+    border-radius: .5rem;
     cursor: pointer;
+    padding: .8rem 3rem;
 }
 
     .btn-confirmation:hover {
-        background-color: #45a049;
+        background: var(--red);
+        letter-spacing: .1rem;
     }
 
     .btn-confirmation:active {
-        background-color: #3e874c;
+        background-color: #4CAF50;
     }
 
+      

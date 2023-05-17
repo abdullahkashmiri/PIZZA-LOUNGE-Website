@@ -21,25 +21,30 @@ namespace PIZZA_LOUNGE.User
                 string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
 
                 // Fetch data from the database
-                DataTable productData = FetchProductDataFromDatabase(connString);
+                DataTable productData = FetchProductDataFromDatabase();
 
                 // Bind the data to the ASP.NET controls
                 RepeaterProducts.DataSource = productData;
                 RepeaterProducts.DataBind();
             }
         }
-        private DataTable FetchProductDataFromDatabase(string connectionString)
+        private DataTable FetchProductDataFromDatabase()
         {
-            string query = "SELECT * FROM Products";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            string query = "SELECT * FROM Products WHERE IsActive <> 3";
+
+            using (SqlConnection connection = new SqlConnection(connString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataTable productData = new DataTable();
-                    adapter.Fill(productData);
-                    return productData;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
                 }
             }
         }

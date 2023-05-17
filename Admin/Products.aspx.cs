@@ -6,36 +6,35 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Diagnostics;
+
 using System.Web.UI.WebControls;
-using System.Collections;
 
 namespace PIZZA_LOUNGE.Admin
 {
     public partial class Products : System.Web.UI.Page
     {
+        protected global::System.Web.UI.WebControls.Panel ConfirmationPanel;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-
-
                 // Fetch data from the database
-                DataTable productData = FetchProductDataFromDatabase(connString);
+                DataTable productData = FetchProductDataFromDatabase();
 
                 // Bind the data to the ASP.NET controls
                 RepeaterProducts.DataSource = productData;
                 RepeaterProducts.DataBind();
             }
         }
-     
-        private DataTable FetchProductDataFromDatabase(string connectionString)
+
+        private DataTable FetchProductDataFromDatabase()
         {
-            string query = "SELECT * FROM Products WHERE IsActive <> 2";
+            string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            string query = "SELECT * FROM Products WHERE IsActive <> 3";
 
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -43,52 +42,65 @@ namespace PIZZA_LOUNGE.Admin
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
+                        DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
+                        return dataTable;
                     }
                 }
             }
-
-            return dataTable;
         }
 
         protected void deleteproduct_Click(object sender, EventArgs e)
         {
             Button deleteButton = (Button)sender;
             RepeaterItem item = (RepeaterItem)deleteButton.NamingContainer;
+            Label nameLabel = (Label)item.FindControl("NameLabel");
+            string productName = nameLabel.Text;
 
-            // Retrieve the data for the clicked item
-            string productName = ((Label)item.FindControl("NameLabel")).Text;
+            // Store the product name in a session variable
+            Session["ProductName"] = productName;
 
-            if (!string.IsNullOrEmpty(productName))
-            {
-                Session["ProductName1"] = productName;
-
-                // Show the confirmation panel
-                ConfirmationPanel.Visible = true;
-            }
+            Debug.WriteLine("Product Name1: " + Session["ProductName"]);
+            // Show the confirmation panel
+            ConfirmationPanel.Visible = true;
         }
 
+        protected void YesButton_Click(object sender, EventArgs e)
+        {
+            // Retrieve the product name from the session variable
+            string productName = Session["ProductName"] as string;
+            Debug.WriteLine("Product Name2: " + Session["ProductName"]);
 
-        //protected void addToCartButton_Click(object sender, EventArgs e)
-        //{
-        //    Button addToCartButton = (Button)sender;
-        //    RepeaterItem item = (RepeaterItem)addToCartButton.NamingContainer;
+            Debug.WriteLine("Product Name3: " + productName);
+            if (!string.IsNullOrEmpty(productName))
+            {
+                string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
 
-        //    // Retrieve the data for the clicked item
-        //    string name = ((Label)item.FindControl("NameLabel")).Text;
-        //    string description = ((Label)item.FindControl("DescriptionLabel")).Text;
-        //    string imageUrl = ((Image)item.FindControl("ImageLabel")).ImageUrl;
-        //    string price = ((System.Web.UI.HtmlControls.HtmlGenericControl)item.FindControl("PriceLabel")).InnerHtml;
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    string query = "UPDATE Products SET IsActive = 3 WHERE Name = @ProductName";
 
-        //    // Store the data in session variables
-        //    Session["CartName"] = name;
-        //    Session["CartDescription"] = description;
-        //    Session["CartImageUrl"] = imageUrl;
-        //    Session["CartPrice"] = price;
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ProductName", productName);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
 
-        //    // Redirect to the Order page
-        //    Response.Redirect("Order.aspx");
-        //}
+            // Hide the confirmation panel
+            ConfirmationPanel.Visible = false;
+
+            // Refresh the page to reflect the changes
+            Response.Redirect(Request.Url.ToString());
+        }
+
+        protected void NoButton_Click(object sender, EventArgs e)
+        {
+            // Hide the confirmation panel
+            ConfirmationPanel.Visible = false;
+        }
 
         protected string GetRatingStars(double rating)
         {
@@ -115,101 +127,5 @@ namespace PIZZA_LOUNGE.Admin
 
             return starHtml;
         }
-        //protected void YesButton_Click(object sender, EventArgs e)
-        //{
-        //    // Retrieve the product name from ViewState
-        //    string productName = ViewState["ProductName"] as string;
-
-        //    if (!string.IsNullOrEmpty(productName))
-        //    {
-        //        // Perform further processing or delete the product from the database using the product name
-        //        string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        //        using (SqlConnection connection = new SqlConnection(connString))
-        //        {
-        //            connection.Open();
-
-        //            // Update the IsActive column to 2 for the specified product name
-        //            string updateQuery = "UPDATE Products SET IsActive = @IsActive WHERE Name = @ProductName";
-
-        //            using (SqlCommand command = new SqlCommand(updateQuery, connection))
-        //            {
-        //                command.Parameters.AddWithValue("@IsActive", 2);
-        //                command.Parameters.AddWithValue("@ProductName", productName);
-        //                int rowsAffected = command.ExecuteNonQuery();
-
-        //                if (rowsAffected > 0)
-        //                {
-        //                    // Update successful
-        //                    // Additional processing or display success message
-        //                }
-        //                else
-        //                {
-        //                    // Update failed
-        //                    // Additional processing or display error message
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    // Clear the ViewState after use if needed
-        //    ViewState["ProductName"] = null;
-        //}
-
-        protected void YesButton_Click(object sender, EventArgs e)
-        {
-            // Retrieve the product name from Session
-            string productName = Session["ProductName1"].ToString();
-
-            if (!string.IsNullOrEmpty(productName))
-            {
-                // Perform further processing or delete the product from the database using the product name
-                string connString1 = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-                using (SqlConnection connection = new SqlConnection(connString1))
-                {
-                    connection.Open();
-
-                    // Update the IsActive column to 2 for the specified product name
-                    string updateQuery = "UPDATE Products SET IsActive = @IsActive WHERE Name = @ProductName";
-
-                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
-                    {
-                        command.Parameters.AddWithValue("@IsActive", 2);
-                        command.Parameters.AddWithValue("@ProductName", productName);
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            // Update successful
-                            // Additional processing or display success message
-                        }
-                        else
-                        {
-                            // Update failed
-                            // Additional processing or display error message
-                        }
-                    }
-                }
-            }
-
-            // Clear the Session variable after use if needed
-            Session["ProductName1"] = null;
-
-            // Refresh the data and bind it to the Repeater control
-            string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-            DataTable productData = FetchProductDataFromDatabase(connString);
-            RepeaterProducts.DataSource = productData;
-            RepeaterProducts.DataBind();
-        }
-
-
-
-
-        protected void NoButton_Click(object sender, EventArgs e)
-        {
-            // This code will be executed when the "No" button is clicked in the confirmation dialog
-            Response.Redirect("Products.aspx");
-
-        }
-
     }
 }
