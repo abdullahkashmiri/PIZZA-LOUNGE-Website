@@ -1,0 +1,172 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --red: #ed1717;
+    --black: #192a56;
+    --lightcolor: #666;
+    --box-Shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('../TemplateFiles/menuimages/banner/oimg1.jpg');
+    background-size: cover;
+    font-size: 1.6rem;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 50rem;
+    max-width: 90%;
+    box-shadow: var(--box-Shadow);
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--black);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subheading {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.order-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.order-image {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    margin-right: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.order-details {
+    flex-grow: 1;
+}
+
+.order-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: var(--black);
+}
+
+.order-price {
+    font-size: 1.6rem;
+    color: var(--lightcolor);
+    margin-bottom: 1rem;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.approve-button,
+.decline-button {
+    background-color: var(--black);
+    color: white;
+    border: none;
+    padding: 1rem 1.6rem;
+    margin-left: 2rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.decline-button {
+    background-color: var(--red);
+}
+    .approve-button:hover,
+    .decline-button:hover {
+        opacity: 0.8;
+    }
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        width: 90%;
+    }
+
+    .heading {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .subheading {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .order-container {
+        margin-bottom: 1rem;
+    }
+
+    .order-image {
+        width: 6rem;
+        height: 6rem;
+        margin-right: 1rem;
+    }
+
+    .order-name {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .order-price {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .approve-button,
+    .decline-button {
+        padding: 0.6rem 0.8rem;
+        margin-left: 0.8rem;
+        font-size: 1.4rem;
+    }
+}

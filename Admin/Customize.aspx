@@ -46,7 +46,7 @@
                 <div id="updateSection" runat="server" class="form-section">
    <div class="container1">
   <asp:Label ID="productLabel" runat="server" Visible="true">Update Product</asp:Label><br />
-        <asp:Label ID="productNamehere" runat="server" Visible="true" Text="fajita pizza"> </asp:Label>
+        <asp:Label ID="productNamehere" runat="server" Visible="true" Text=""> </asp:Label>
 
        <img id="productimage" src="../TemplateFiles/menuimages/banner/img1.jpg" alt="Image" style="width: 200px; height: 150px; " runat="server" visible="false"  >
 </div>
