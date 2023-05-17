@@ -44,7 +44,7 @@ namespace PIZZA_LOUNGE.Admin
         {
             // Reset the CSS class for all buttons
             products.CssClass = "a";
-            menu.CssClass = "a";
+            customize.CssClass = "a";
             order.CssClass = "a";
             reserve.CssClass = "a";
             comp.CssClass = "a";
@@ -58,8 +58,8 @@ namespace PIZZA_LOUNGE.Admin
                 case "Products.aspx":
                     products.CssClass = "a active";
                     break;
-                case "Menu.aspx":
-                    menu.CssClass = "a active";
+                case "Customize.aspx":
+                    customize.CssClass = "a active";
                     break;
                 case "Custom.aspx":
                     order.CssClass = "a active";
@@ -81,12 +81,12 @@ namespace PIZZA_LOUNGE.Admin
 
         protected void products_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../User/Products.aspx");
+            Response.Redirect("./Products.aspx");
         }
 
-        protected void menu_Click(object sender, EventArgs e)
+        protected void customize_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../User/Menu.aspx");
+            Response.Redirect("./Customize.aspx");
         }
 
         protected void order_Click(object sender, EventArgs e)

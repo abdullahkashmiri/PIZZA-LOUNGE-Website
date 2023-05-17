@@ -67,11 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Customize.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Global.asax" />
     <Content Include="TemplateFiles\css\cart.css" />
     <Content Include="TemplateFiles\css\complaint.css" />
     <Content Include="TemplateFiles\css\custom.css" />
+    <Content Include="TemplateFiles\css\customize.css" />
     <Content Include="TemplateFiles\css\login-style.css" />
     <Content Include="TemplateFiles\css\menu.css" />
     <Content Include="TemplateFiles\css\menupage.css" />
@@ -88,6 +90,7 @@
     <Content Include="TemplateFiles\menuimages\banner\img111.png" />
     <Content Include="TemplateFiles\menuimages\banner\img2.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\img5.jpg" />
+    <Content Include="TemplateFiles\menuimages\banner\img6.jpg" />
     <Content Include="TemplateFiles\menuimages\bbq.jpg" />
     <Content Include="TemplateFiles\menuimages\chapli.jpg" />
     <Content Include="TemplateFiles\menuimages\cheesy.jpg" />
@@ -128,6 +131,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Customize.aspx.cs">
+      <DependentUpon>Customize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Customize.aspx.designer.cs">
+      <DependentUpon>Customize.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>

@@ -1,0 +1,258 @@
+﻿
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --red: #f44336;
+    --black: #333333;
+    --lightcolor: #666666;
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 600px;
+    height: 85vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    margin-top: 3rem;
+    padding: 5rem;
+    padding-top: 2rem;
+    border-radius: 1rem;
+    overflow-y: auto;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-image: url('../menuimages/banner/img6.jpg');
+    background-size: cover;
+}
+
+h2 {
+    font-size: 3.2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: var(--red);
+    border-radius: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+}
+
+.radiocontainer {
+    position: relative;
+    display: flex;
+    margin: 3rem;
+}
+
+label {
+    font-size: 1.8rem;
+    color: var(--black);
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 3rem;
+    margin-left: 1rem;
+}
+
+.displaycontainer {
+}
+
+input[type='text'],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    border: 1px solid var(--lightcolor);
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--black);
+}
+
+input[type='file'] {
+    display: block;
+    margin-top: 15px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.8rem;
+    background-color: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+    button:hover {
+        background-color: #c62828;
+    }
+
+.checkbox-label {
+    font-size: 1.6rem;
+    color: var(--black);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .checkbox-container input[type='checkbox'] {
+        margin-right: 8px;
+    }
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .radio-container label {
+        margin-right: 10px;
+    }
+
+    .radio-container input[type='radio'] {
+        margin: 0;
+        transform: scale(1.5);
+    }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    input[type='text'],
+    textarea {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1.6rem;
+    }
+
+    .checkbox-label {
+        font-size: 1.4rem;
+    }
+
+    .radio-container {
+        margin-bottom: 20px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+        .radio-container input[type='radio'] {
+            margin-right: 10px;
+            transform: scale(1.5);
+        }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    input[type='text'],
+    textarea {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1.6rem;
+    }
+
+    .checkbox-label {
+        font-size: 1.4rem;
+    }
+
+    .radio-container {
+        margin-bottom: 20px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+        .radio-container input[type='radio'] {
+            margin-right: 10px;
+            transform: scale(1.5);
+        }
+}
+#updateSection {
+    display: none;
+}
+
+    #updateSection.visible {
+        display: block;
+    }
+
+    #updateSection label {
+        font-size: 1.8rem;
+        color: var(--black);
+        display: block;
+        margin-bottom: 5px;
+        margin-right: 3rem;
+        margin-left: 1rem;
+    }
+
+    #updateSection input[type='checkbox'] {
+        margin-right: 8px;
+    }
+
+    #updateSection input[type='file'] {
+        display: block;
+        margin-top: 15px;
+    }
+.container1 {
+    
+    justify-content: center;
+ font-size:2.0rem;
+ font-weight:bold;
+ background-color:red;
+ padding: 1rem;
+ color:white;
+ margin-left:10rem;
+ margin-right:10rem;
+    text-align: center;
+border-radius:2rem;
+}
