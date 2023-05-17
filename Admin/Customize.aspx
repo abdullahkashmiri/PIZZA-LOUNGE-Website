@@ -9,8 +9,8 @@
         <div class="container">
             <h2>Customize Your Menu</h2>
           <div class="radiocontainer">
-    <asp:RadioButton ID="insertRadioButton" runat="server" Text="Insert A Product" AutoPostBack="True" OnCheckedChanged="RadioBtnPage_CheckedChanged" />
-    <asp:RadioButton ID="updateRadioButton" runat="server" Text="Update A Product" AutoPostBack="True" OnCheckedChanged="RadioBtnPage_CheckedChanged" />
+    <asp:RadioButton ID="insertRadioButton" runat="server" Text="Add New Item" AutoPostBack="True" OnCheckedChanged="RadioBtnPage_CheckedChanged" />
+    <asp:RadioButton ID="updateRadioButton" runat="server" Text="Update Existing Item" AutoPostBack="True" OnCheckedChanged="RadioBtnPage_CheckedChanged" />
 </div>
 
             <div class="displaycontainer">

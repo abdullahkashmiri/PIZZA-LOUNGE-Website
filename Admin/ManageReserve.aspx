@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container">
         <h1 class="heading">Manage Reservations</h1>
-        <h2 class="subheading">Accept Or Decline</h2>
+        <h2 class="subheading">Approve Or Decline</h2>
         <table class="reservation-table">
             <thead>
                 <tr>

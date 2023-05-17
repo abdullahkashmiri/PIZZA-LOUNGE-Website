@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Customize.aspx" />
+    <Content Include="Admin\ManageComplaint.aspx" />
     <Content Include="Admin\ManageOrder.aspx" />
     <Content Include="Admin\ManageReserve.aspx" />
     <Content Include="Admin\Products.aspx" />
@@ -77,6 +78,7 @@
     <Content Include="TemplateFiles\css\custom.css" />
     <Content Include="TemplateFiles\css\customize.css" />
     <Content Include="TemplateFiles\css\login-style.css" />
+    <Content Include="TemplateFiles\css\managecomplaint.css" />
     <Content Include="TemplateFiles\css\manageorder.css" />
     <Content Include="TemplateFiles\css\managereserve.css" />
     <Content Include="TemplateFiles\css\menu.css" />
@@ -147,6 +149,13 @@
     </Compile>
     <Compile Include="Admin\Customize.aspx.designer.cs">
       <DependentUpon>Customize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageComplaint.aspx.cs">
+      <DependentUpon>ManageComplaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageComplaint.aspx.designer.cs">
+      <DependentUpon>ManageComplaint.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageOrder.aspx.cs">
       <DependentUpon>ManageOrder.aspx</DependentUpon>
