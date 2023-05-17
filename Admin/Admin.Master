@@ -1,11 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="PIZZA_LOUNGE.User.User" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="PIZZA_LOUNGE.Admin.Admin" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    
-   <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Lounge</title>
@@ -20,7 +19,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+     <form id="form1" runat="server">
 
             <style>
     header .navbarad .active,
@@ -50,7 +49,7 @@
         </style>
         <!--//Navigation Bar-->
         <nav class="navbarad">
-            <asp:LinkButton ID="home" Visible="true" runat="server" Cssclass="a active" OnClick="home_Click" >HOME</asp:LinkButton>
+            <asp:LinkButton ID="products" Visible="true" runat="server" Cssclass="a active" OnClick="products_Click" >Products</asp:LinkButton>
             <asp:LinkButton ID="menu" Visible="true" runat="server" Cssclass="a" OnClick="menu_Click" >MENU</asp:LinkButton>
             <asp:LinkButton ID="order" Visible="true" runat="server" Cssclass="a" OnClick="order_Click" >MAKE A PIZZA</asp:LinkButton>
             <asp:LinkButton ID="reserve" Visible="true" runat="server" Cssclass="a" OnClick="reserve_Click" >RESERVATION</asp:LinkButton>

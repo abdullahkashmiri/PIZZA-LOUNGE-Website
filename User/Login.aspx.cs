@@ -26,8 +26,30 @@ namespace PIZZA_LOUNGE.User
                     connec.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("Select*From Users where User_name = '" + username.Text.Trim() + "' AND u_password = '" + password.Text.Trim() + "'", connec);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Admins WHERE User_name = @username AND a_password = @password", connec);
+                cmd.Parameters.AddWithValue("@username", username.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", password.Text.Trim());
                 SqlDataReader sdr = cmd.ExecuteReader();
+
+                if (sdr.HasRows)
+                {
+                    sdr.Read();
+                    Session["username"] = sdr.GetValue(1).ToString();
+                    Session["admin_id"] = sdr.GetValue(0).ToString();
+                    Session["status"] = "Logedin";
+                    Session["bit"] = 2; // 2 for user
+                    cmd.Dispose();
+                    connec.Close();
+
+                    Response.Redirect("../Admin/Products.aspx");
+                }
+
+                sdr.Close();
+                cmd.Dispose();
+
+
+                cmd = new SqlCommand("Select*From Users where User_name = '" + username.Text.Trim() + "' AND u_password = '" + password.Text.Trim() + "'", connec);
+                sdr = cmd.ExecuteReader();
 
                 if (sdr.HasRows)
                 {
@@ -35,6 +57,7 @@ namespace PIZZA_LOUNGE.User
                     Session["username"] = sdr.GetValue(1).ToString();
                     Session["user_id"] = sdr.GetValue(0).ToString();
                     Session["status"] = "Logedin";
+                    Session["bit"] = 0; // 1 for admin
                     Session["OrderNo"] = Convert.ToInt32(sdr.GetValue(4)) + 1;
 
                     regular_discount(Convert.ToInt32(Session["user_id"]));

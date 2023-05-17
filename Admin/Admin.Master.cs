@@ -5,15 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PIZZA_LOUNGE.User
+namespace PIZZA_LOUNGE.Admin
 {
-    public partial class User : System.Web.UI.MasterPage
+    public partial class Admin : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["CustomOrderNo"] = 0;
-            Session["OrderNo"] = 0;
-            Session["OrderPrice"] = 0;
             try
             {
                 if (!IsPostBack)
@@ -46,7 +43,7 @@ namespace PIZZA_LOUNGE.User
         private void SetActiveButton(string currentPage)
         {
             // Reset the CSS class for all buttons
-            home.CssClass = "a";
+            products.CssClass = "a";
             menu.CssClass = "a";
             order.CssClass = "a";
             reserve.CssClass = "a";
@@ -58,8 +55,8 @@ namespace PIZZA_LOUNGE.User
             // Set the active CSS class for the current page button
             switch (currentPage)
             {
-                case "Default.aspx":
-                    home.CssClass = "a active";
+                case "Products.aspx":
+                    products.CssClass = "a active";
                     break;
                 case "Menu.aspx":
                     menu.CssClass = "a active";
@@ -82,9 +79,9 @@ namespace PIZZA_LOUNGE.User
             }
         }
 
-        protected void home_Click(object sender, EventArgs e)
+        protected void products_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Default.aspx");
+            Response.Redirect("./Products.aspx");
         }
 
         protected void menu_Click(object sender, EventArgs e)
@@ -121,7 +118,7 @@ namespace PIZZA_LOUNGE.User
             Session["username"] = null;
             Session["user_id"] = null;
             Session["status"] = null;
-            Session["bit"] = 2; // no one active
+            Session["bit"] = 2;
             Response.Redirect("./Default.aspx");
         }
     }
