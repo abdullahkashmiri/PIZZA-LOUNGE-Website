@@ -92,10 +92,12 @@
     <Content Include="TemplateFiles\css\products.css" />
     <Content Include="TemplateFiles\css\rating.css" />
     <Content Include="TemplateFiles\css\reserve.css" />
+    <Content Include="TemplateFiles\css\response.css" />
     <Content Include="TemplateFiles\css\reviewrating.css" />
     <Content Include="TemplateFiles\css\tracking.css" />
     <Content Include="TemplateFiles\js\script.js" />
     <Content Include="TemplateFiles\menuimages\achari.jpg" />
+    <Content Include="TemplateFiles\menuimages\banner\aimg1.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\cimg.png" />
     <Content Include="TemplateFiles\menuimages\banner\cimg3.jpg" />
     <Content Include="TemplateFiles\menuimages\banner\cimg4.jpg" />
@@ -139,6 +141,7 @@
     <Content Include="User\Order.aspx" />
     <Content Include="User\Rating.aspx" />
     <Content Include="User\Reserve.aspx" />
+    <Content Include="User\Response.aspx" />
     <Content Include="User\SignUp.aspx" />
     <Content Include="User\Tracking.aspx" />
     <Content Include="Web.config" />
@@ -273,6 +276,13 @@
     </Compile>
     <Compile Include="User\Reserve.aspx.designer.cs">
       <DependentUpon>Reserve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Response.aspx.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Response.aspx.designer.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>

@@ -62,7 +62,7 @@
 
         <div class="iconsad">
             <i class="fas fa-bars" id="menu-barsad"></i>
-            <a href="Rating.aspx" class="fas fa-heart"></a>
+            <a href="Response.aspx" class="fas fa-heart"></a>
             <a href="Cart.aspx" class="fas fa-shopping-cart"></a>
         </div>
     </header>

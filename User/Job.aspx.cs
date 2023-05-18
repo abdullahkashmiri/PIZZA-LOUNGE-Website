@@ -49,7 +49,7 @@ namespace PIZZA_LOUNGE.User
                 cmd.ExecuteNonQuery();
             }
 
-            SendMail();
+          //  SendMail();
             // Delete the file from the server's file system
             //File.Delete(fileSavePath);
         }

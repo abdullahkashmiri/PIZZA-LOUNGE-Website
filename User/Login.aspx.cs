@@ -37,7 +37,7 @@ namespace PIZZA_LOUNGE.User
                     Session["username"] = sdr.GetValue(1).ToString();
                     Session["admin_id"] = sdr.GetValue(0).ToString();
                     Session["status"] = "Logedin";
-                    Session["bit"] = 2; // 2 for user
+                    Session["bit"] = 1; // 1 for adimin
                     cmd.Dispose();
                     connec.Close();
 
@@ -57,7 +57,7 @@ namespace PIZZA_LOUNGE.User
                     Session["username"] = sdr.GetValue(1).ToString();
                     Session["user_id"] = sdr.GetValue(0).ToString();
                     Session["status"] = "Logedin";
-                    Session["bit"] = 0; // 1 for admin
+                    Session["bit"] = 0; // 0 for user
                     Session["OrderNo"] = Convert.ToInt32(sdr.GetValue(4)) + 1;
 
                     regular_discount(Convert.ToInt32(Session["user_id"]));
