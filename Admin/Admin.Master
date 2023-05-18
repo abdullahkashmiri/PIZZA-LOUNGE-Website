@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Lounge</title>
-    <link rel="stylesheet" href="../TemplateFiles/css/navbar.css"><!--linked css file of navbar-->
+    <link rel="stylesheet" href="../TemplateFiles/css/navbaradmin.css"><!--linked css file of navbar-->
     <link rel="stylesheet" href="../TemplateFiles/css/menu.css"><!--linked css file of mo-->
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
@@ -53,16 +53,16 @@
             <asp:LinkButton ID="customize" Visible="true" runat="server" Cssclass="a" OnClick="customize_Click" >Customize Products</asp:LinkButton>
             <asp:LinkButton ID="manageorder" Visible="true" runat="server" Cssclass="a" OnClick="manageorder_Click" >Manage Orders</asp:LinkButton>
             <asp:LinkButton ID="managereserve" Visible="true" runat="server" Cssclass="a" OnClick="managereserve_Click" >Manage Reservations</asp:LinkButton>
-            <asp:LinkButton ID="comp" Visible="true" runat="server" Cssclass="a" OnClick="comp_Click" >COMPLAINT</asp:LinkButton>
-            <asp:LinkButton ID="job" Visible="true" runat="server" Cssclass="a" OnClick="job_Click" >JOBS</asp:LinkButton>
+            <asp:LinkButton ID="managecomplaint" Visible="true" runat="server" Cssclass="a" OnClick="managecomplaint_Click" >Manage Complaints</asp:LinkButton>
+            <asp:LinkButton ID="managejob" Visible="true" runat="server" Cssclass="a" OnClick="managejob_Click" >Manage Jobs</asp:LinkButton>
             <asp:LinkButton ID="Login" Visible="true" runat="server" Cssclass="a" OnClick="Login_Click" >LOGIN</asp:LinkButton>
             <asp:LinkButton ID="Logout" Visible="true" runat="server" Cssclass="a active" OnClick="Logout_Click" >LOGOUT</asp:LinkButton>
         </nav>
 
         <div class="iconsad">
             <i class="fas fa-bars" id="menu-barsad"></i>
-            <a href="Rating.aspx" class="fas fa-heart"></a>
-            <a href="Cart.aspx" class="fas fa-shopping-cart"></a>
+            <a href="ReviewRating.aspx" class="fas fa-heart"></a>
+         <%--   <a href="Cart.aspx" class="fas fa-shopping-cart"></a>--%>
         </div>
     </header>
     <!-- Header section-->

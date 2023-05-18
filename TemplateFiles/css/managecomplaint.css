@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    background-image: url('../menuimages/banner/cimg3.jpg');
+    background-image: url('../menuimages/banner/cimg4.jpg');
     background-size: cover;
     font-size: 1.6rem;
     overflow-y: auto;
@@ -48,6 +48,8 @@ body {
     overflow-y: scroll;
     max-height: 85vh;
     background-color: aliceblue;
+    background: none;
+
 }
 
 .heading {
@@ -61,8 +63,7 @@ body {
     background-color: var(--red);
     padding: 2rem;
     border-radius: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    
 }
 
 .subheading {
@@ -74,8 +75,7 @@ body {
     background-color: #808080;
     padding: 2rem;
     border-radius: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    
 }
 
 .complaint-container {
@@ -87,7 +87,7 @@ body {
     border-radius: 2rem;
 }
 
-.order-image {
+.complaint-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -100,14 +100,14 @@ body {
     flex-grow: 1;
 }
 
-.order-name {
+.complaint-name {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 0.8rem;
     color: var(--black);
 }
 
-.order-price {
+.complaint-price {
     font-size: 1.6rem;
     color: var(--lightcolor);
     margin-bottom: 1rem;
@@ -162,22 +162,22 @@ body {
         margin-bottom: 1.5rem;
     }
 
-    .order-container {
+    .complaint-container {
         margin-bottom: 1rem;
     }
 
-    .order-image {
+    .complaint-image {
         width: 6rem;
         height: 6rem;
         margin-right: 1rem;
     }
 
-    .order-name {
+    .complaint-name {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
     }
 
-    .order-price {
+    .complaint-price {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
     }

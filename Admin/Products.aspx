@@ -41,7 +41,7 @@
                     <div class="boxad">
                         <div class="imagead">
                             <asp:Image ID="ImageLabel" runat="server" AlternateText="" ImageUrl='<%# Eval("ImageUrl") %>' />
-                            <a href="./Rating.aspx" class="fas fa-heart"></a>
+                          <%--  <a href="./Rating.aspx" class="fas fa-heart"></a>--%>
                         </div>
 
                         <div class="contentad">

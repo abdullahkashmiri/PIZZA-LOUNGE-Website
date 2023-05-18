@@ -46,8 +46,9 @@ body {
     overflow-y: scroll; /* Change from "auto" to "scroll" */
     max-height: 85vh; /* Add a maximum height to limit the container's height */
     background-color:aliceblue;
+    background:none;
 }
- 
+
 .heading {
     font-size: 3rem;
     font-weight: bold;
@@ -57,10 +58,9 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     margin-top: 3rem;
     background-color: var(--red);
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     border-radius: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
 
 .subheading {
@@ -70,10 +70,9 @@ body {
     color: var(--black);
     text-align: center;
     background-color: #808080;
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     border-radius: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
 
 .order-container {

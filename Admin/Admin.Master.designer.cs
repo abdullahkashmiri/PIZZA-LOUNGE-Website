@@ -69,22 +69,22 @@ namespace PIZZA_LOUNGE.Admin
         protected global::System.Web.UI.WebControls.LinkButton managereserve;
 
         /// <summary>
-        /// comp control.
+        /// managecomplaint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton comp;
+        protected global::System.Web.UI.WebControls.LinkButton managecomplaint;
 
         /// <summary>
-        /// job control.
+        /// managejob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton job;
+        protected global::System.Web.UI.WebControls.LinkButton managejob;
 
         /// <summary>
         /// Login control.

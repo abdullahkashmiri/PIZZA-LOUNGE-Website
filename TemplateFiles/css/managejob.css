@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    background-image: url('../menuimages/banner/rimg1.jpg');
+    background-image: url('../menuimages/banner/jimg2.jpg');
     background-size: cover;
     font-size: 1.6rem;
     overflow-y: auto;
@@ -48,7 +48,7 @@ body {
     overflow-y: scroll;
     max-height: 85vh;
     background-color: aliceblue;
-   
+    background:none;
 }
 
 .heading {
@@ -62,7 +62,7 @@ body {
     background-color: var(--red);
     padding: 2rem;
     border-radius: 1.5rem;
-     
+   
 }
 
 .subheading {
@@ -74,10 +74,10 @@ body {
     background-color: #808080;
     padding: 2rem;
     border-radius: 1.5rem;
-   
+    
 }
 
-.order-container {
+.job-container {
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
@@ -95,23 +95,28 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.order-details {
+.job-details {
     flex-grow: 1;
 }
 
-.order-name {
+.job-name {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 0.8rem;
     color: var(--black);
 }
 
-.order-price {
+.job-price {
     font-size: 1.6rem;
     color: var(--lightcolor);
     margin-bottom: 1rem;
 }
-.order-actions {
+
+.job-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.job-actions {
     display: flex;
     justify-content: flex-end;
 }
@@ -139,7 +144,6 @@ body {
     .decline-button:hover {
         opacity: 0.8;
     }
-    
 
 @media only screen and (max-width: 768px) {
     body {
@@ -162,7 +166,7 @@ body {
         margin-bottom: 1.5rem;
     }
 
-    .order-container {
+    .job-container {
         margin-bottom: 1rem;
     }
 
@@ -172,12 +176,12 @@ body {
         margin-right: 1rem;
     }
 
-    .order-name {
+    .job-name {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
     }
 
-    .order-price {
+    .job-price {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
     }
@@ -188,11 +192,4 @@ body {
         margin-left: 0.8rem;
         font-size: 1.4rem;
     }
-}
-
-.reservation-table th,
-.reservation-table td {
-    padding: 1rem 1rem; /* Add padding to create space between columns */
-    text-align: center;
-    border-bottom: 1px solid var(--lightcolor);
 }

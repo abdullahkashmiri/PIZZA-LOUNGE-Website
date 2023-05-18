@@ -47,8 +47,8 @@ namespace PIZZA_LOUNGE.Admin
             customize.CssClass = "a";
             manageorder.CssClass = "a";
             managereserve.CssClass = "a";
-            comp.CssClass = "a";
-            job.CssClass = "a";
+            managecomplaint.CssClass = "a";
+            managejob.CssClass = "a";
             Login.CssClass = "a";
             Logout.CssClass = "a";
 
@@ -67,11 +67,11 @@ namespace PIZZA_LOUNGE.Admin
                 case "ManageReserve.aspx":
                     managereserve.CssClass = "a active";
                     break;
-                case "Complaint.aspx":
-                    comp.CssClass = "a active";
+                case "ManageComplaint.aspx":
+                    managecomplaint.CssClass = "a active";
                     break;
-                case "Job.aspx":
-                    job.CssClass = "a active";
+                case "ManageJob.aspx":
+                    managejob.CssClass = "a active";
                     break;
                 case "Login.aspx":
                     Login.CssClass = "a active";
@@ -100,13 +100,13 @@ namespace PIZZA_LOUNGE.Admin
 
         }
 
-        protected void comp_Click(object sender, EventArgs e)
+        protected void managecomplaint_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../User/Complaint.aspx");
+            Response.Redirect("./ManageComplaint.aspx");
         }
-        protected void job_Click(object sender, EventArgs e)
+        protected void managejob_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../User/Job.aspx");
+            Response.Redirect("./ManageJob.aspx");
         }
 
         protected void Login_Click(object sender, EventArgs e)
