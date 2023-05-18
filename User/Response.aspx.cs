@@ -23,11 +23,43 @@ namespace PIZZA_LOUNGE.User
                 }
                 // Get the user ID from the session variable
                 int userId = Convert.ToInt32(Session["user_id"]);
-
+                BindUsers(userId);
                 BindOrders(userId);
                 BindComplaints(userId);
                 BindJobs(userId);
                 BindReservations(userId);
+            }
+        }
+
+        protected void BindUsers(int userId)
+        {
+            // Assuming you have a connection string named "con" defined in your web.config file
+            string connectionString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+
+            // Query to retrieve the user with the specified user ID
+            string query = "SELECT * FROM Users WHERE UserId = @UserId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@UserId", userId);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        rptUsers.DataSource = reader;
+                        rptUsers.DataBind();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that occur during the database operation
+                    // You can display an error message or log the exception
+                }
             }
         }
 
@@ -126,21 +158,22 @@ namespace PIZZA_LOUNGE.User
         }
 
 
+
         protected void BindComplaints(int userId)
         {
             // Logic to bind complaints specific to the user with the given user ID to rptComplaints repeater
             // Replace this with your actual data retrieval logic based on the user ID
-
+            string name1 = Session["username"].ToString();
             // Assuming you have a connection string named "con" defined in your web.config file
             string connectionString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
 
             // Query to retrieve complaints for the specified user ID
-            string query = "SELECT * FROM complaint_form WHERE UserId = @UserId";
+            string query = "SELECT * FROM complaint_form WHERE username = @Username";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserId", userId);
+                command.Parameters.AddWithValue("@Username", name1);
 
                 try
                 {
@@ -149,40 +182,7 @@ namespace PIZZA_LOUNGE.User
 
                     if (reader.HasRows)
                     {
-                        // Clear previous items in the repeater
-                        rptComplaints.DataSource = null;
-                        rptComplaints.DataBind();
-
-                        // Create a list to hold the complaints
-                        List<Complaint> complaints = new List<Complaint>();
-
-                        while (reader.Read())
-                        {
-                            // Read complaint details from the reader
-                            int complaintId = Convert.ToInt32(reader["complaint_id"]);
-                            string username = reader["username"].ToString();
-                            string email = reader["email"].ToString();
-                            string message = reader["message"].ToString();
-                            DateTime submitTime = Convert.ToDateTime(reader["submit_time"]);
-                            int? status = reader["status"] as int?;
-
-                            // Create a new Complaint object
-                            Complaint complaint = new Complaint
-                            {
-                                ComplaintId = complaintId,
-                                Username = username,
-                                Email = email,
-                                Message = message,
-                                SubmitTime = submitTime,
-                                Status = status
-                            };
-
-                            // Add the complaint to the list
-                            complaints.Add(complaint);
-                        }
-
-                        // Bind the complaints list to the repeater
-                        rptComplaints.DataSource = complaints;
+                        rptComplaints.DataSource = reader;
                         rptComplaints.DataBind();
                     }
                 }
@@ -212,14 +212,14 @@ namespace PIZZA_LOUNGE.User
 
             // Assuming you have a connection string named "con" defined in your web.config file
             string connectionString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-
+            string name1 = Session["username"].ToString();
             // Query to retrieve jobs for the specified user ID
-            string query = "SELECT * FROM job_form WHERE UserId = @UserId";
+            string query = "SELECT * FROM job_form WHERE firstname = @Firstname";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserId", userId);
+                command.Parameters.AddWithValue("@Firstname", name1);
 
                 try
                 {
@@ -228,44 +228,7 @@ namespace PIZZA_LOUNGE.User
 
                     if (reader.HasRows)
                     {
-                        // Clear previous items in the repeater
-                        rptJobs.DataSource = null;
-                        rptJobs.DataBind();
-
-                        // Create a list to hold the jobs
-                        List<Job> jobs = new List<Job>();
-
-                        while (reader.Read())
-                        {
-                            // Read job details from the reader
-                            int jobId = Convert.ToInt32(reader["job_id"]);
-                            string firstName = reader["firstname"].ToString();
-                            string lastName = reader["lastname"].ToString();
-                            string email = reader["email"].ToString();
-                            string city = reader["city"].ToString();
-                            string zip = reader["zip"].ToString();
-                            byte[] cvFile = (byte[])reader["cv_file"];
-                            int? status = reader["status"] as int?;
-
-                            // Create a new Job object
-                            Job job = new Job
-                            {
-                                JobId = jobId,
-                                FirstName = firstName,
-                                LastName = lastName,
-                                Email = email,
-                                City = city,
-                                Zip = zip,
-                                CVFile = cvFile,
-                                Status = status
-                            };
-
-                            // Add the job to the list
-                            jobs.Add(job);
-                        }
-
-                        // Bind the jobs list to the repeater
-                        rptJobs.DataSource = jobs;
+                        rptJobs.DataSource = reader;
                         rptJobs.DataBind();
                     }
                 }
@@ -277,7 +240,8 @@ namespace PIZZA_LOUNGE.User
             }
         }
 
-        
+
+
         // Job class to hold job details
         public class Job
         {
@@ -290,6 +254,7 @@ namespace PIZZA_LOUNGE.User
             public byte[] CVFile { get; set; }
             public int? Status { get; set; }
         }
+
 
         protected void BindReservations(int userId)
         {
@@ -314,39 +279,7 @@ namespace PIZZA_LOUNGE.User
 
                     if (reader.HasRows)
                     {
-                        // Clear previous items in the repeater
-                        rptReservations.DataSource = null;
-                        rptReservations.DataBind();
-
-                        // Create a list to hold the reservations
-                        List<Reservation> reservations = new List<Reservation>();
-
-                        while (reader.Read())
-                        {
-                            // Read reservation details from the reader
-                            int reservationId = Convert.ToInt32(reader["ID"]);
-                            string day = reader["Day"].ToString();
-                            string hour = reader["Hour"].ToString();
-                            string name = reader["Name"].ToString();
-                            string phone = reader["Phone"].ToString();
-                            int persons = Convert.ToInt32(reader["Persons"]);
-                            int? status = reader["status"] as int?;
-
-                            // Create a new Reservation object
-                            Reservation reservation = new Reservation
-                            {
-                                Day = day,
-                                Hour = hour,
-                                Persons = persons,
-                                Status = status
-                            };
-
-                            // Add the reservation to the list
-                            reservations.Add(reservation);
-                        }
-
-                        // Bind the reservations list to the repeater
-                        rptReservations.DataSource = reservations;
+                        rptReservations.DataSource = reader;
                         rptReservations.DataBind();
                     }
                 }
@@ -357,6 +290,7 @@ namespace PIZZA_LOUNGE.User
                 }
             }
         }
+
 
         // Reservation class to hold reservation details
         public class Reservation

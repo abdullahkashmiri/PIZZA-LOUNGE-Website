@@ -121,16 +121,17 @@
     <div class="parentcontainer"> 
         <div class="container">
             <div class="heading">Account Details</div>
-            <ItemTemplate>
-                <div class="user-container">
-                    <div class="user-details">
-                        <div class="user-id">Complaint ID: <%# Eval("complaint_id") %></div>
-                        <div class="user-name">Username: <%# Eval("username") %></div>
-                        <div class="user-email">Email: <%# Eval("email") %></div>
-                       
-                    </div>
-                </div>
-            </ItemTemplate>
+         <asp:Repeater ID="rptUsers" runat="server">
+    <ItemTemplate>
+        <div class="user-container">
+            <div class="user-details">
+                <div class="user-id">User ID: <%# Eval("UserId") %></div>
+                <div class="user-name">Username: <%# Eval("User_name") %></div>
+                <div class="user-email">Email: <%# Eval("Email") %></div>
+            </div>
+        </div>
+    </ItemTemplate>
+</asp:Repeater>
 
             <div class="heading">Orders Details and Status</div>
 

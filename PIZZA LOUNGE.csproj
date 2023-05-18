@@ -74,6 +74,7 @@
     <Content Include="Admin\ManageReserve.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Admin\ReviewRating.aspx" />
+    <Content Include="DataBase\PizzaLoungeDB.sql" />
     <Content Include="Global.asax" />
     <Content Include="TemplateFiles\css\cart.css" />
     <Content Include="TemplateFiles\css\complaint.css" />
