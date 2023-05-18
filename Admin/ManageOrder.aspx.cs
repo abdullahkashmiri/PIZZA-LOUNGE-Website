@@ -11,14 +11,15 @@ namespace PIZZA_LOUNGE.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int bit = 1;// for admin
-            if (Session["status"] == null || Session["bit"].ToString() != bit.ToString())  // admin not logged in
-            {
-                Response.Redirect("../User/Login.aspx");
-            }
+           
 
             if (!IsPostBack)
             {
+                int bit = 1;// for admin
+                if (Session["status"] == null || Session["bit"].ToString() != bit.ToString())  // admin not logged in
+                {
+                    Response.Redirect("../User/Login.aspx");
+                }
                 BindOrderData();
             }
         }
